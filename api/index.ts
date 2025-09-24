@@ -10,8 +10,15 @@ import commentRoutes from "./src/routes/comment.routes";
 //import summaryRoutes from "./src/routes/summary.routes";
 import cookieParser from "cookie-parser";
 import path from "path";
+import cors, { CorsOptions } from "cors";
 
 const app: Express = express();
+
+// 💣💣💣💣💣💣 later change the url to whatever you host the website
+let corsOption: CorsOptions = {
+  origin: "http://sarah-habibi.com",
+};
+app.use(cors(corsOption));
 
 dotenv.config();
 
